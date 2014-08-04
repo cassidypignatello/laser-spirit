@@ -11,7 +11,9 @@ class Product < ActiveRecord::Base
     if line_items.empty?
       return true
     else
-      return errors.add(:base, 'This product is is currently being purchased by a buyer!')
+      errors.add(:base, 'This product is is currently being purchased by a buyer!')
+      return false
+    end
   end
 end
 
