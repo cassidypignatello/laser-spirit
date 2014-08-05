@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+product = Product.create([{ title: 'Pizza', description: 'Delish', price: 3}, 
+                          { title: 'Gyro', description: 'Yum', price: 4}, 
+                          { title: 'Hotdog', description: 'Hmmm', price: 8}])
