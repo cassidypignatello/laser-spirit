@@ -10,6 +10,12 @@ class LineItemsController < ApplicationController
     redirect_to shopping_cart_path(cart)
   end
 
+  def destroy
+    line_item = LineItem.find(params[:item_id])
+    line_item.destroy
+    redirect_to shopping_cart_path(current_user)
+  end
+
   private
 
   def line_item_params

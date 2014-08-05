@@ -4,17 +4,17 @@ class Product < ActiveRecord::Base
   has_many :shopping_carts, through: :line_items
 
 
-  before_destroy :check_for_carts
-  private
+  # before_destroy :check_for_carts
+  # private
 
-  def check_for_carts
-    if line_items.empty?
-      return true
-    else
-      errors.add(:base, 'This product is is currently being purchased by a buyer!')
-      return false
-    end
-  end
+  # def check_for_carts
+  #   if line_items.empty?
+  #     return true
+  #   else
+  #     errors.add(:base, 'This product is is currently being purchased by a buyer!')
+  #     return false
+  #   end
+  # end
 end
 
 
