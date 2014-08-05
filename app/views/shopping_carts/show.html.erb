@@ -1,14 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Line item:</strong>
-  <%= @shopping_cart.line_item %>
-</p>
-
-<p>
-  <strong>Buyer:</strong>
-  <%= @shopping_cart.buyer_id %>
-</p>
+<h2>Your Cart</h2>
+<ul>
+<% @shopping_cart.line_items.each do |item| %>
+<li><%= item.product.title %></li>
+<% end %>
 
 <%= link_to 'Edit', edit_shopping_cart_path(@shopping_cart) %> |
 <%= link_to 'Back', shopping_carts_path %>
