@@ -1,0 +1,35 @@
+<div class="navbar navbar-inverse">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to 'General Store', root_path, :class => 'navbar-brand' %>
+  </div>
+  <div class="navbar-collapse collapse navbar-inverse-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Active</a></li>
+      <li><a href="#">Link</a></li>
+    </ul>
+    <form class="navbar-form navbar-right">
+      <input type="text" class="form-control col-lg-8" placeholder="Search">
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Cart</a></li>
+      <% if user_signed_in? %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %><b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </li>
+      <% else %>
+        <li><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %></li>
+        <li><%= link_to "Sign In", user_session_path, :class => 'navbar-link'  %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
