@@ -39,13 +39,10 @@ ActiveRecord::Schema.define(version: 20140804183531) do
   end
 
   create_table "shopping_carts", force: true do |t|
-    t.integer  "line_item_id"
     t.integer  "buyer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "shopping_carts", ["line_item_id"], name: "index_shopping_carts_on_line_item_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

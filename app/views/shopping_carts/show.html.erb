@@ -1,13 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Line item:</strong>
-  <%= @shopping_cart.line_item %>
-</p>
-
-<p>
-  <strong>Buyer:</strong>
-  <%= @shopping_cart.buyer_id %>
+  <ul>
+    <% @shopping_cart.products.each do |pdt| %>
+    <li><%= pdt.title %></li>
+    <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_shopping_cart_path(@shopping_cart) %> |

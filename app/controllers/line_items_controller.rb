@@ -5,16 +5,19 @@ class LineItemsController < ApplicationController
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   def create
-    #raise params.inspect
     product = Product.find(params[:product_id])
-    @line_item = @shopping_cart.line_items.build(product: product)
-    redirect_to shopping_cart_path
+    cart = current_user.shopping_cart
+    LineItem.create(
+      :shopping_cart_id => cart.id, 
+      :product_id => product.id
+    )
+    redirect_to shopping_cart_path(cart)
   end
 
   private
 
   def line_item_params
-    params.require(:line_item).permit(:product_id, :shopping_cart_id)
+    params.require(:line_item).permit(:product_id)
   end
 
 end
