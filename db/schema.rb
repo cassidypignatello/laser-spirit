@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20140804183531) do
     t.string   "title"
     t.text     "description"
     t.integer  "price"
+    t.integer  "seller_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_url"

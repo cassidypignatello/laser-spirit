@@ -27,6 +27,9 @@
     <%= f.label :image_url %><br>
     <%= f.text_field :image_url %>
   </div>
+  <div class="field">
+    <%= f.hidden_field :seller_id, :value => @seller_id %><br>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
