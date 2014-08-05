@@ -1,8 +1,8 @@
-# Flatirongeneralstore
+# Flatiron General Store
 
 ## Description
 
-Add a short description of your app.
+A storefront platform for creating, purchasing and selling products.
 
 ## Screenshots
 
