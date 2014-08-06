@@ -4,19 +4,18 @@
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th>#</th>
+      <th>Quantity</th>
       <th>Title</th>
       <th>Price</th>
     </tr>
   </thead>
   <tbody>
-    <% @shopping_cart.products.each do |pdt| %>
+    <% @shopping_cart.line_items.each do |line| %>
       <tr>
-        <td><%= pdt.id %></td>
-        <td><%= pdt.title %></td>
-        <td><%= pdt.price %></td>
-        <td><%#= pdt.quantity%>&times;<%#=pdt.title%></td>
-        <td><%= button_to 'Delete Item', line_item_path(:item_id => pdt.id), method: :delete %></td>
+        <td><%= line.quantity%></td>
+        <td><%= line.product.title %></td>
+        <td><%= number_to_currency(line.product.price) %></td>
+        <td><%= button_to 'Delete Item', line_item_path(:item_id => line.product.id), method: :delete %></td>
       </tr>
     <% end %>
   </tbody>

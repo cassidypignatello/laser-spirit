@@ -16,7 +16,7 @@
             <div class="btn-group">
               <button class="btn btn-default">
                 <i class="fa fa-arrow-down"></i>
-                $<%= @product.price %>
+                <%= number_to_currency(@product.price) %>
               </button>
             </div>
             <div class="btn-group">
