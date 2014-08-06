@@ -1,14 +1,33 @@
 class LineItemsController < ApplicationController
   
+  # def create
+  #   product = Product.find(params[:product_id])
+  #    cart = current_user.shopping_cart
+  #    LineItem.create(
+  #      :shopping_cart_id => cart.id, 
+  #      :product_id => product.id
+  #    )
+  #   redirect_to shopping_cart_path(cart)
+  # end
+
   def create
     product = Product.find(params[:product_id])
-    cart = current_user.shopping_cart
-    LineItem.create(
-      :shopping_cart_id => cart.id, 
-      :product_id => product.id
-    )
-    redirect_to shopping_cart_path(cart)
+    @line_item = @shopping_cart.add_product(product.id)
+
+    respond_to do |format|
+      if @line_item.save
+        format.html { redirect_to @line_item.cart,
+          notice: 'Line item was successfully created.' }
+        format.json { render action: 'show',
+          status: :created, location: @line_item }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @line_item.errors,
+          status: :unprocessable_entity }
+      end
+    end
   end
+
 
   def destroy
     line_item = LineItem.find(params[:item_id])
@@ -23,3 +42,5 @@ class LineItemsController < ApplicationController
   end
 
 end
+
+

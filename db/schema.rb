@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140806022712) do
+ActiveRecord::Schema.define(version: 20140806155937) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20140806022712) do
     t.integer  "shopping_cart_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quantity",         default: 1
   end
 
   add_index "line_items", ["product_id"], name: "index_line_items_on_product_id"
