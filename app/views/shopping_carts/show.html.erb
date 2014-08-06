@@ -6,7 +6,6 @@
     <tr>
       <th>#</th>
       <th>Title</th>
-      <th>Description</th>
       <th>Price</th>
     </tr>
   </thead>
@@ -15,7 +14,6 @@
       <tr>
         <td><%= pdt.id %></td>
         <td><%= pdt.title %></td>
-        <td><%= pdt.description %></td>
         <td><%= pdt.price %></td>
         <td><%= button_to 'Delete Item', line_item_path(:item_id => pdt.id), method: :delete %></td>
       </tr>
