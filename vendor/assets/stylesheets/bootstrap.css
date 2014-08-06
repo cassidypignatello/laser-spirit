@@ -3399,7 +3399,7 @@ tbody.collapse.in {
   width: 1%;
 }
 .btn-group-justified > .btn-group .btn {
-  width: 100%;
+  width: 95%;
 }
 .btn-group-justified > .btn-group .dropdown-menu {
   left: auto;
