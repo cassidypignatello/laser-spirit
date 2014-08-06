@@ -16,8 +16,13 @@
         <td><%= line.product.title %></td>
         <td><%= number_to_currency(line.product.price) %></td>
         <td><%= button_to 'Delete Item', line_item_path(:item_id => line.product.id), method: :delete %></td>
-      </tr>
     <% end %>
+      </tr>
+      <tr>
+        <th>Total</th>
+        <td></td>
+        <td><%= number_to_currency(@shopping_cart.cart_calculator) %></td>
+      </tr>
   </tbody>
 </table> 
 

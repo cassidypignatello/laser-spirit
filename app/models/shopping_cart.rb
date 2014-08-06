@@ -14,6 +14,23 @@ class ShoppingCart < ActiveRecord::Base
     current_item
   end
 
+  def cart_calculator
+    total = 0
+    self.line_items.each do |line|
+     line_total = line.product.price * line.quantity
+     total += line_total
+    end
+    total
+  end
+
+
+
+ 
+
+#get product prices -> line.product.price X line.quantity
+
+#sum all product
+
 
 end
 
