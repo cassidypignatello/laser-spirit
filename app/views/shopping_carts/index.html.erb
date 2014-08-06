@@ -12,7 +12,7 @@
   <tbody>
     <% @shopping_carts.each do |shopping_cart| %>
       <tr>
-        <td><%= shopping_cart.line_item %></td>
+        <td><%#= shopping_cart.line_item %></td>
         <td><%= shopping_cart.buyer_id %></td>
         <td><%= link_to 'Show', shopping_cart %></td>
         <td><%= link_to 'Edit', edit_shopping_cart_path(shopping_cart) %></td>
