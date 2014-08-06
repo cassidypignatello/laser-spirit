@@ -17,7 +17,7 @@
         <td><%= line.quantity%></td>
         <td><%= line.product.title %></td>
         <td><%= number_to_currency(line.product.price) %></td>
-        <td><%= button_to 'Delete Item', line_item_path(:item_id => line.product.id), method: :delete %></td>
+        <td><%= button_to 'Delete Item', line_item_path(:item_id => line.id), method: :delete %></td>
     <% end %>
       </tr>
       <tr>
