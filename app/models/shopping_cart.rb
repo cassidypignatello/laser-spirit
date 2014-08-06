@@ -14,21 +14,6 @@ class ShoppingCart < ActiveRecord::Base
     current_item
   end
 
-#   def consolidate_cart(cart: [])
-#   consolidated_cart={}
-#   cart.each do |item|
-#     item.each do |name, attributes|
-#       if consolidated_cart[name]
-#         consolidated_cart[name][:count]+=1
-#       else
-#         consolidated_cart[name]=attributes
-#         consolidated_cart[name][:count]=1
-#       end
-#     end
-#   end
-#   consolidated_cart
-# end
-
   def cart_calculator
     total = 0
     self.line_items.each do |line|
