@@ -15,7 +15,6 @@
         <td><%= pdt.id %></td>
         <td><%= pdt.title %></td>
         <td><%= pdt.price %></td>
-        <td><%= pdt.quantity%>&times;<%=item.products.title%></td>
         <td><%= button_to 'Delete Item', line_item_path(:item_id => pdt.id), method: :delete %></td>
       </tr>
     <% end %>
