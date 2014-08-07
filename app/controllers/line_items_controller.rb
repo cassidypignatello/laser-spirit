@@ -31,6 +31,7 @@ class LineItemsController < ApplicationController
 
 
   def destroy
+    
     line_item = LineItem.find(params[:item_id])
     line_item.destroy
     redirect_to shopping_cart_path(current_user)

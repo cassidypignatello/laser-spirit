@@ -1,3 +1,4 @@
+<div class="container">
 <% if notice %>
 <div class="alert alert-dismissable alert-success">
   <button type="button" class="close" data-dismiss="alert">×</button>
@@ -20,9 +21,6 @@
           <%= "#{product.description.first(100)}..." %>
         </div>
         <div class="panel-footer">
-          <%= number_to_currency(product.price) %>
-        </div>
-        <div class="panel-footer">
           <div class="btn-group btn-group-justified">
             <div class="btn-group">
               <% #binding.pry %>
@@ -32,16 +30,14 @@
             <div class="btn-group">
               <%= button_to "Edit", edit_product_path(product), {:method => "get", :class => "btn btn-default"} %>
             </div>
+            
           </div> 
         </div>
       </div>
     </div>
   <% end %>
 </div>
-
-
-
-
+</div>
 
 
 
