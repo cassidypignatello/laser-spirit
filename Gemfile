@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'figaro'
 gem 'stripe'
 gem 'mini_magick'
 gem 'carrierwave'
