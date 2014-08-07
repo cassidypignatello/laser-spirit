@@ -25,6 +25,10 @@ class ShoppingCart < ActiveRecord::Base
     total
   end
 
+  def cart_calculator_cents
+    self.cart_calculator * 100.to_i
+  end
+
 
 
 
