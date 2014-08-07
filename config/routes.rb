@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   post '/add_to_cart/:product_id' => 'shopping_carts#add_to_cart', :as => 'add_to_cart'
 
+  get '/checkout', to: 'shopping_carts#checkout'
+
   devise_for :users, skip: [:sessions, :passwords, :confirmations, :registrations]
     as :user do
       # session handling

@@ -27,12 +27,6 @@ class ShoppingCart < ActiveRecord::Base
 
 
 
- 
-
-#get product prices -> line.product.price X line.quantity
-
-#sum all product
-
 
 end
 

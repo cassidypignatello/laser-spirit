@@ -28,7 +28,7 @@
           <td></td>
           <td></td>
           <th><%= number_to_currency(@shopping_cart.cart_calculator) %></th>
-          <th><%= button_to "Checkout", new_order_path, method: :get %></th>
+          <th><%= button_to "Checkout", '/checkout', method: :get %></th>
         </tr>
     </tbody>
   </table> 
