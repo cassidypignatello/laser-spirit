@@ -7,6 +7,13 @@
 
 <% end %>
 
+
+<%= form_tag products_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :title => nil %>
+<% end %>
+
 <h1>Products</h1>
 
 <div class="row">

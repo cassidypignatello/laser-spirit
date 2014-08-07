@@ -4,16 +4,13 @@ class Product < ActiveRecord::Base
   has_many :shopping_carts, through: :line_items
   mount_uploader :image, ImageUploader
 
-
-  # def add_to_cart
-  #   if current_user 
-  #     binding.pry
-  #   else
-  #     redirect new_user_session_path
-  #   end
-  # end
-
+  searchable do
+    text :title, :description
+  end
+  
+  
 end
+
 
 
 

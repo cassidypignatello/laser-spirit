@@ -3,8 +3,11 @@ class ProductsController < ApplicationController
 
   # GET /products
   # GET /products.json
-  def index
-    @products = Product.all
+   def index
+    @search = Product.search do
+    fulltext params[:search]
+    end
+    @products = @search.results
   end
 
   # GET /products/1
