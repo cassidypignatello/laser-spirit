@@ -10,6 +10,7 @@
         <th>Quantity</th>
         <th>Title</th>
         <th>Price</th>
+        <th>Total</th>
       </tr>
     </thead>
     <tbody>
@@ -18,13 +19,15 @@
           <td><%= line.quantity%></td>
           <td><%= line.product.title %></td>
           <td><%= number_to_currency(line.product.price) %></td>
+          <td><%= number_to_currency(line.quantity * line.product.price) %></td>
           <td><%= button_to 'Delete Item', line_item_path(:item_id => line.id), method: :delete %></td>
       <% end %>
         </tr>
         <tr>
-          <th>Total</th>
+          <th>Subtotal</th>
           <td></td>
-          <td><%= number_to_currency(@shopping_cart.cart_calculator) %></td>
+          <td></td>
+          <th><%= number_to_currency(@shopping_cart.cart_calculator) %></th>
         </tr>
     </tbody>
   </table> 
