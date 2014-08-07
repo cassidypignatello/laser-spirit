@@ -5,7 +5,8 @@ class Product < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   searchable do
-    text :title, :description
+    text :title, :boost => 5
+    text :description
   end
   
   
