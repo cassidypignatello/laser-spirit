@@ -4,14 +4,6 @@
   <button type="button" class="close" data-dismiss="alert">×</button>
   <p id="notice"><%= notice %></p>
 </div>
-
-<% end %>
-
-
-<%= form_tag products_path, :method => :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :title => nil %>
 <% end %>
 
 <h1>Products</h1>
