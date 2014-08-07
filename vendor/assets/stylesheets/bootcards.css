@@ -256,7 +256,7 @@ a.list-group-item.active:focus {
 
 .bootcards-summary .panel-body .bootcards-summary-item:hover {
   text-decoration: none;
-  background: #eee;
+  /*background: #eee;*/
 }
 
 .bootcards-summary .panel-body .bootcards-summary-item i {

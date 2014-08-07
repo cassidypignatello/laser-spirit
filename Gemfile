@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'stripe'
 gem 'mini_magick'
 gem 'carrierwave'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

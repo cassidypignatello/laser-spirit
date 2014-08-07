@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :orders
+
   get 'profile/index'
 
   get 'profile/show'
