@@ -5,17 +5,14 @@ class Product < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
 
-  # before_destroy :check_for_carts
-  # private
-
-  # def check_for_carts
-  #   if line_items.empty?
-  #     return true
+  # def add_to_cart
+  #   if current_user 
+  #     binding.pry
   #   else
-  #     errors.add(:base, 'This product is is currently being purchased by a buyer!')
-  #     return false
+  #     redirect new_user_session_path
   #   end
   # end
+
 end
 
 

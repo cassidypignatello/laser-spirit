@@ -12,6 +12,22 @@ class ShoppingCartsController < ApplicationController
   def show
   end
 
+  def add_to_cart
+    #binding.pry
+    if !current_user
+      redirect_to new_user_session_path
+    else
+      # X What product?
+      # What cart?
+      # Add to that cart
+      # Redirect to the cart
+      # line_items_path(product_id: product, shopping_cart_id: current_user.shopping_cart.id
+      current_user.shopping_cart.add_product(params[:product_id])
+      
+      redirect_to shopping_cart_path(current_user.id)
+    end
+  end
+
   # GET /shopping_carts/new
   def new
     @shopping_cart = ShoppingCart.new

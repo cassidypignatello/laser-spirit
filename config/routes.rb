@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :line_items
 
+  post '/add_to_cart/:product_id' => 'shopping_carts#add_to_cart', :as => 'add_to_cart'
+
   devise_for :users, skip: [:sessions, :passwords, :confirmations, :registrations]
     as :user do
       # session handling

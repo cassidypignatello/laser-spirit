@@ -8,8 +8,10 @@ class ShoppingCart < ActiveRecord::Base
     current_item = line_items.find_by(product_id: product_id)
     if current_item
       current_item.quantity += 1
+      current_item.save
     else
       current_item = line_items.build(product_id: product_id)
+      current_item.save
     end
     current_item
   end
