@@ -7,6 +7,7 @@ class Product < ActiveRecord::Base
   searchable do
     text :title, :boost => 5
     text :description
+    integer :price
   end
   
   
