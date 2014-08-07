@@ -9,12 +9,17 @@
   </div>
   <div class="navbar-collapse collapse navbar-inverse-collapse">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Active</a></li>
-      <li><a href="#">Link</a></li>
+      <!-- <li class="active"><a href="#">Active</a></li>
+      <li><a href="#">Link</a></li> -->
     </ul>
-    <form class="navbar-form navbar-right">
-      <input type="text" class="form-control col-lg-8" placeholder="Search">
-    </form>
+
+    <div class="navbar-form navbar-right">
+    <%= form_tag products_path, :method => :get do %>
+    <%= text_field_tag :search, params[:search], {:class => "form-control col-lg-8"} %>
+    <% end %>
+    </div>
+
+
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
         <li><%= link_to image_tag("cart2.png"), shopping_cart_path(current_user) %></li>

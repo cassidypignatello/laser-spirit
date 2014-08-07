@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'figaro'
+gem 'sunspot_solr'
+gem 'sunspot_rails'
 gem 'stripe'
 gem 'mini_magick'
 gem 'carrierwave'
