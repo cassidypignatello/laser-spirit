@@ -1,0 +1,17 @@
+<tr>
+  <td><%= line_item.product.title %></td>
+  <td><%= number_to_currency(line_item.product.price) %></td>
+  
+  <td>
+    <%= form_for :line_item, :url => line_items_update_path(id: line_item.id) do |f| %>
+      <div class="field">
+        <%= f.number_field :quantity, :value => line_item.quantity %>
+          <%= submit_tag "Update" %>
+      </div>
+    <% end %>
+  </td>
+
+
+  <td><%= number_to_currency(line_item.quantity * line_item.product.price) %></td>
+  <td><%= button_to 'Remove', line_item_path(:item_id => line_item.id), method: :delete %></td>
+</tr>
