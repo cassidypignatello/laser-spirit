@@ -22,3 +22,6 @@
 /config/initializers/stripe.rb
 # Ignore application configuration
 /config/application.yml
+
+/solr/data
+/solr/development
