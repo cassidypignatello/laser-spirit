@@ -20,6 +20,12 @@ product = Product.create([{
     price: 4, 
     seller_id: katie.id
   }, 
+  { 
+    title: "Git master", 
+    description: "TGit is the version control system developed by Linus Torvalds for Linux kernel development. It took the open source world by storm since its inception in 2005, and is used by small development shops and giants like Google, Red Hat, and IBM, and of course many open source projects.", 
+    price: 19.99, 
+    seller_id: katie.id
+  }, 
   { title: "DBA SCRUM Master Audiobook", 
     description: "A book to help new database administrators understand more about the world of database administration. More and more people are moving into the DBA profession, and many are looking for a getting-started guide. Blogs are written about how to be an exceptional DBA and what to do in your first 100 days. This book takes a different approach, injecting some humor into helping you understand how to hit the ground running, and most importantly how to survive as a DBA.", 
     price: 5.58, 
