@@ -5,17 +5,17 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <%= link_to 'General Store', root_path, :class => 'navbar-brand' %>
+    <%= link_to image_tag("down.png"), root_path, :class => 'navbar-brand' %>
   </div>
   <div class="navbar-collapse collapse navbar-inverse-collapse">
     <ul class="nav navbar-nav">
-      <!-- <li class="active"><a href="#">Active</a></li>
+      <!-- <li><a href="#">Active</a></li>
       <li><a href="#">Link</a></li> -->
     </ul>
 
     <div class="navbar-form navbar-right">
     <%= form_tag products_path, :method => :get do %>
-    <%= text_field_tag :search, params[:search], {:class => "form-control col-lg-8"} %>
+    <%= text_field_tag :search, params[:search], {:class => "form-control col-lg-8", :placeholder =>'Find stuff!'}  %>
     <% end %>
     </div>
 

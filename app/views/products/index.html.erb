@@ -1,43 +1,4 @@
 <div class="container">
-<% if notice %>
-<div class="alert alert-dismissable alert-success">
-  <button type="button" class="close" data-dismiss="alert">×</button>
-  <p id="notice"><%= notice %></p>
+<%= render "products/products" %>
 </div>
-<% end %>
-
-<h1>Products</h1>
-
-<div class="row">
-   <% @products.each do |product| %>
-    <div class="col-lg-3 col-sm-6 col-md-4">
-      <div class="panel panel-default bootcards-media">
-        <div class="panel-heading">
-          <h3 class=""><%= link_to product.title, product_path(product.id) %></h3>
-        </div>
-        <img src="<%= product.image_url %>" class="img-responsive"/>
-        <div class="panel-body">
-          <%= "#{product.description.first(100)}..." %>
-        </div>
-        <div class="panel-footer">
-          <div class="btn-group btn-group-justified">
-            <div class="btn-group">
-              <% #binding.pry %>
-              <%= button_to "Add to Cart", add_to_cart_path(product.id), 
-               {:class => "btn btn-default"} %>
-            </div>
-            <div class="btn-group">
-              <%= button_to "Edit", edit_product_path(product), {:method => "get", :class => "btn btn-default"} %>
-            </div>
-            
-          </div> 
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
-</div>
-
-
-
 

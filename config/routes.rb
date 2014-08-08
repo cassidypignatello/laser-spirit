@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
   resources :orders
 
   get 'profile/index'
@@ -12,6 +14,8 @@ Rails.application.routes.draw do
   resources :products
 
   resources :line_items
+
+  post 'line_items/update'
 
   resources :charges
 
@@ -55,7 +59,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'products#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

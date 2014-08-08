@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
   has_many :shopping_carts, through: :line_items
   mount_uploader :image, ImageUploader
 
-  validates :title, :description,  presence: true
+  validates :title, :description, presence: true
 
   searchable do
     text :title, :boost => 5
