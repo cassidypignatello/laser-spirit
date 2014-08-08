@@ -29,7 +29,7 @@
           <td></td>
           <th><%= number_to_currency(@shopping_cart.cart_calculator) %></th>
           <th><%# button_to "Checkout", new_order_path, method: :get %>
-            <%= form_tag charges_path do %>
+            <%= form_tag orders_path, method: :post do %>
               <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                 data-name="Flatiron General Store"
