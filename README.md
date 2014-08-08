@@ -37,4 +37,4 @@ Link to your blog, twitter, etc!
 
 ## License
 
-Flatirongeneralstore is MIT Licensed. See LICENSE for details.
+Flatiron General Store is MIT Licensed. See LICENSE for details.
