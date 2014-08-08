@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   resources :line_items
 
+  post 'line_items/update'
+
   resources :charges
 
   post '/add_to_cart/:product_id' => 'shopping_carts#add_to_cart', :as => 'add_to_cart'

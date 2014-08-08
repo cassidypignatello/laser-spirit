@@ -19,21 +19,15 @@ class LineItemsController < ApplicationController
     end
   end
   
-  # def create
-  #   cart = current_user.shopping_cart
-  #   @line_item = cart.add_product(params[:product_id])
-  #    LineItem.create(
-  #      :shopping_cart_id => cart.id, 
-  #      :product_id => product.id
-  #    )
-  #   redirect_to shopping_cart_path(cart)
-  # end
-
-
   def destroy
-    
     line_item = LineItem.find(params[:item_id])
     line_item.destroy
+    redirect_to shopping_cart_path(current_user)
+  end
+
+  def update
+    @line_item = LineItem.find(params[:id])
+    @line_item.update(quantity: params[:line_item][:quantity])
     redirect_to shopping_cart_path(current_user)
   end
 

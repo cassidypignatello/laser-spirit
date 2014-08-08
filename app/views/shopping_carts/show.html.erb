@@ -7,20 +7,26 @@
   <table class="table table-striped table-hover">
     <thead>
       <tr>
-        <th>Quantity</th>
-        <th>Title</th>
+        <th>Item</th>
         <th>Price</th>
+        <th>Quantity</th>
         <th>Total</th>
       </tr>
     </thead>
     <tbody>
       <% @shopping_cart.line_items.each do |line| %>
         <tr>
-          <td><%= line.quantity%></td>
           <td><%= line.product.title %></td>
           <td><%= number_to_currency(line.product.price) %></td>
-          <td><%= number_to_currency(line.quantity * line.product.price) %></td>
-          <td><%= button_to 'Delete Item', line_item_path(:item_id => line.id), method: :delete %></td>
+          <td>
+            <%= form_for :line_item, :url => line_items_update_path(id: line.id) do |f| %>
+                <div class="field">
+                    <%= f.number_field :quantity, :value => line.quantity %>
+                    <%= submit_tag "Update" %>
+                </div>
+            <% end %>
+          </td>
+          <td><%= number_to_currency(line.quantity * line.product.price) %></td>     
       <% end %>
         </tr>
         <tr>
