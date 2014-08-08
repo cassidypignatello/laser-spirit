@@ -4,5 +4,6 @@ class AddDetailsToOrder < ActiveRecord::Migration
     add_column :orders, :city, :string
     add_column :orders, :state, :string
     add_column :orders, :postal_code, :string
+    add_column :orders, :amount, :integer
   end
 end

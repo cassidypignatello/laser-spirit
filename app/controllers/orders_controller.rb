@@ -28,7 +28,17 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     # Amount in cents
-    @amount = 500
+    @order = Order.new
+    @order.amount = 0
+    current_user.shopping_cart.line_items.each do |line|
+      #binding.pry
+      @order.name = current_user.name
+      @order.email = current_user.email
+      @order.amount += line.product.price * line.quantity
+    end
+    
+
+    @amount = @order.amount*100
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -41,6 +51,7 @@ class OrdersController < ApplicationController
       :description => 'Rails Stripe customer',
       :currency    => 'usd'
     )
+    @order.save
     redirect_to root_path
     # At this point we need to make an Order.new We can get the info we need from current_user.
     # ex. 

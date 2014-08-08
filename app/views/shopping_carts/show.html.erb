@@ -15,7 +15,7 @@
     </thead>
     <tbody>
       <% @shopping_cart.line_items.each do |line| %>
-        <tr>
+        <tr><%#= binding.pry %>
           <td><%= line.quantity%></td>
           <td><%= line.product.title %></td>
           <td><%= number_to_currency(line.product.price) %></td>

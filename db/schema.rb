@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20140807160607) do
     t.string   "city"
     t.string   "state"
     t.string   "postal_code"
+    t.integer  "amount"
   end
 
   create_table "products", force: true do |t|
