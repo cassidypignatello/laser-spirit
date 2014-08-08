@@ -12,10 +12,6 @@ class OrdersController < ApplicationController
   def show
   end
 
-  # GET /orders/new
-  # def new
-  #   @order = Order.new
-  # end
    def new
     if current_user.shopping_cart.line_items.empty?
       redirect_to root_path, notice: "Your cart is empty"
@@ -25,19 +21,17 @@ class OrdersController < ApplicationController
     @order = Order.new
   end
 
-  # GET /orders/1/edit
   def edit
   end
 
   # POST /orders
   # POST /orders.json
   def create
-    binding.pry
     # Amount in cents
     @amount = 500
 
     customer = Stripe::Customer.create(
-      :email => 'example@stripe.com',
+      :email => params[:stripeEmail],
       :card  => params[:stripeToken]
     )
 
