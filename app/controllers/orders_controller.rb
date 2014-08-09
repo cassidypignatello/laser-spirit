@@ -12,10 +12,6 @@ class OrdersController < ApplicationController
   def show
   end
 
-  # GET /orders/new
-  # def new
-  #   @order = Order.new
-  # end
    def new
     if current_user.shopping_cart.line_items.empty?
       redirect_to root_path, notice: "Your cart is empty"
@@ -25,24 +21,61 @@ class OrdersController < ApplicationController
     @order = Order.new
   end
 
-  # GET /orders/1/edit
   def edit
   end
 
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
-
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
-      else
-        format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
+    # Amount in cents
+    # @order = Order.new
+    @amount = 0
+    current_user.shopping_cart.line_items.each do |line|
+      #binding.pry
+      #@order.name = current_user.name
+      #@order.email = current_user.email
+      @amount += line.product.price * line.quantity
     end
+    
+
+    @amount = @amount*100
+
+    customer = Stripe::Customer.create(
+      :email => params[:stripeEmail],
+      :card  => params[:stripeToken]
+    )
+
+    charge = Stripe::Charge.create(
+      :customer    => customer.id,
+      :amount      => @amount,
+      :description => 'Rails Stripe customer',
+      :currency    => 'usd'
+    )
+    @order = Order.new
+
+    @order.save
+    @order.id
+    @order.amount = 0
+    current_user.shopping_cart.line_items.each do |line|
+      @order.name = current_user.name
+      @order.email = current_user.email
+      @order.amount += line.product.price * line.quantity
+      line.order_id = @order.id
+      line.shopping_cart_id = nil
+      line.save
+    end
+    @order.save
+    redirect_to root_path
+    # At this point we need to make an Order.new We can get the info we need from current_user.
+    # ex. 
+      # current_user.shopping_cart.line_items.last.product.title => "Title"
+      # current_user.shopping_cart.line_items.last.quantity => "2"
+
+    # Really this should be in the Orders controller not charge so I'll try to get it there.
+
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to charges_path
   end
 
   # PATCH/PUT /orders/1
