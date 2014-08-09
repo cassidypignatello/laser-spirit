@@ -1,11 +1,17 @@
 source 'https://rubygems.org'
 
-gem 'figaro'
-gem 'sunspot_solr'
-gem 'sunspot_rails'
-gem 'stripe'
+# Image handlers
+gem "fog"
 gem 'mini_magick'
 gem 'carrierwave'
+
+gem 'figaro'
+
+# Search gems
+gem 'sunspot_solr'
+gem 'sunspot_rails'
+
+gem 'stripe'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use SCSS for stylesheets
