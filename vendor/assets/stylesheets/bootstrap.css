@@ -892,7 +892,7 @@ body {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 1.42857143;
-  color: #0f93df;
+  color: black;
   background-color: #ffffff;
 }
 input,
@@ -2296,7 +2296,7 @@ legend {
   margin-bottom: 21px;
   font-size: 22.5px;
   line-height: inherit;
-  color: #0f93df;
+  color: black;
   border: 0;
   border-bottom: 1px solid transparent;
 }
@@ -4458,14 +4458,14 @@ a.label:focus {
   background-color: #798d8f;
 }
 .label-primary {
-  background-color: #0f93df;
+  background-color: black;
 }
 .label-primary[href]:hover,
 .label-primary[href]:focus {
   background-color: #1a242f;
 }
 .label-success {
-  background-color: black;
+  background-color: #0f93df;
 }
 .label-success[href]:hover,
 .label-success[href]:focus {
