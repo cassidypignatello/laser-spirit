@@ -14,7 +14,7 @@
             <div class="btn-group">
               <% #binding.pry %>
               <%= button_to "Add to Cart", add_to_cart_path(product.id), 
-                remote: true  %>
+                {:class => "btn btn-default", remote: true}  %>
             </div>
             <div class="btn-group">
               <%= button_to "Edit", edit_product_path(product), {:method => "get", :class => "btn btn-default"} %>
