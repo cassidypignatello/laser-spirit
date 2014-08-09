@@ -1,5 +1,6 @@
 class ShoppingCartsController < ApplicationController
   before_action :set_shopping_cart, only: [:show, :edit, :update, :destroy]
+ 
 
   # GET /shopping_carts
   # GET /shopping_carts.json
