@@ -1,5 +1,6 @@
 class ShoppingCartsController < ApplicationController
   before_action :set_shopping_cart, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
  
 
   # GET /shopping_carts

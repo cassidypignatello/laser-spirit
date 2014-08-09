@@ -909,7 +909,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: black;
+  color: #0F93DF;
   text-decoration: underline;
 }
 a:focus {

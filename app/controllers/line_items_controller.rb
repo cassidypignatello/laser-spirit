@@ -1,5 +1,5 @@
 class LineItemsController < ApplicationController
-before filter :authenticate_user!
+
 
 
   def create
