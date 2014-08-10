@@ -17,6 +17,3 @@ class Product < ActiveRecord::Base
 end
 
 
-
-
-`xfvgsdfgdsf`
