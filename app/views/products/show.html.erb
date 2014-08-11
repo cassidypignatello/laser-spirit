@@ -1,25 +1,24 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-6">
-    <p id="notice"><%= notice %></p>
-
-  <div class="col-lg-8 col-md-6 col-sm-4">
-        <div class="panel panel-default bootcards-media">
-          <div class="panel-heading">
-            <h3><%= link_to "#{@product.title} #{number_to_currency(@product.price)}", product_path(@product.id) %></h3>
+      <p id="notice"><%= notice %></p>
+      <div class="col-lg-8 col-md-6 col-sm-4">
+        <div id="content">
+          <div id="product-image">
+            <img src="<%= @product.image %>">
           </div>
-          <img src="<%= @product.image %>" class="img-responsive"/>
-          <div class="panel-body">
-            <%= "#{@product.description}..." %>
-          </div>
-          <div class="panel-footer">
-            <div class="btn-group btn-group-justified">
+          <div id="product-information">
+            <h1><%= @product.title %></h1>
+            <div id="product-pricing">                
+              <p class="price"><%= number_to_currency(@product.price)  %></p>      
               <div class="btn-group">
                 <%= button_to "Add to Cart", add_to_cart_path(@product.id), 
-                  {:class => "btn btn-default"}  %> 
-                  <!-- remote: true  add this back in for ajax popup-->
+                {:class => "btn btn-default"}  %> 
               </div>
-            </div> 
+            </div>
+            <div id="product-description">
+              <%= @product.description  %>
+            </div>
           </div>
         </div>
       </div>
