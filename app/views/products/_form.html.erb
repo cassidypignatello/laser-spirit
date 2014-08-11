@@ -41,7 +41,7 @@
 
   <div class="form-group">  
     <div class="col-lg-12">
-    <%=  f.file_field :image%>
+    <%=  f.file_field :image %>
     </div>
   </div>
 
@@ -53,12 +53,13 @@
     <%= f.submit :class => "btn btn-primary sub" %>
   </div>
   
+ 
+<% end %>
   <div class="col-lg-12">
     <p>
   <%= button_to "Delete", product_path(@product), :method => :delete %>
     </p>
   </div>
-<% end %>
 
     </div>
   </div>
