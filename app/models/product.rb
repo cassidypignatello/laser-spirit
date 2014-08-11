@@ -12,8 +12,7 @@ class Product < ActiveRecord::Base
     text :description
     integer :price
   end
-  
-  
+
 end
 
 
