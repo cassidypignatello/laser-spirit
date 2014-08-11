@@ -1,4 +1,36 @@
 <div class="container">
-<%= render "products/products" %>
+  <div class="row">
+   <% @products.each do |product| %>
+    <div class="col-lg-3 col-sm-6 col-md-4">
+      <div class="panel panel-default bootcards-media">
+        <div class="panel-heading">
+          <h3><%= link_to "#{product.title} #{number_to_currency(product.price)}", product_path(product.id) %></h3>
+        </div>
+        <img src="<%= product.image %>" class="img-responsive"/>
+        <div class="panel-body">
+          <%= "#{product.description.first(100)}..." %>
+        </div>
+        <div class="panel-footer">
+          <div class="btn-group btn-group-justified">
+            
+            <div class="btn-group">
+              <% #binding.pry %>
+              <%= button_to "Add to Cart", add_to_cart_path(product.id), 
+                {:class => "btn btn-default"}  %>
+                <!-- remote: true add back in for ajax popup -->
+            </div> 
+          </div> 
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+                
+     
+
+
+
 </div>
 
