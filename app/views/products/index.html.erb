@@ -16,7 +16,8 @@
             <div class="btn-group">
               <% #binding.pry %>
               <%= button_to "Add to Cart", add_to_cart_path(product.id), 
-                {:class => "btn btn-default", remote: true}  %>
+                {:class => "btn btn-default"}  %>
+                <!-- remote: true add back in for ajax popup -->
             </div> 
           </div> 
         </div>
