@@ -1,26 +1,30 @@
-<div class="row">
-  <div class="col-lg-6">
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+    <p id="notice"><%= notice %></p>
 
-<div class="col-lg-8 col-md-6 col-sm-4">
-      <div class="panel panel-default bootcards-media">
-        <div class="panel-heading">
-          <h3><%= link_to "#{@product.title} #{number_to_currency(@product.price)}", product_path(@product.id) %></h3>
-        </div>
-        <img src="<%= @product.image %>" class="img-responsive"/>
-        <div class="panel-body">
-          <%= "#{@product.description}..." %>
-        </div>
-        <div class="panel-footer">
-          <div class="btn-group btn-group-justified">
-            <div class="btn-group">
-              <%= button_to'Add To Cart', line_items_path(product_id: @product, shopping_cart_id: current_user.shopping_cart.id), {:class => "btn btn-default", remote: true} %>
-            </div>
-          </div> 
+  <div class="col-lg-8 col-md-6 col-sm-4">
+        <div class="panel panel-default bootcards-media">
+          <div class="panel-heading">
+            <h3><%= link_to "#{@product.title} #{number_to_currency(@product.price)}", product_path(@product.id) %></h3>
+          </div>
+          <img src="<%= @product.image %>" class="img-responsive"/>
+          <div class="panel-body">
+            <%= "#{@product.description}..." %>
+          </div>
+          <div class="panel-footer">
+            <div class="btn-group btn-group-justified">
+              <div class="btn-group">
+                <%= button_to "Add to Cart", add_to_cart_path(@product.id), 
+                  {:class => "btn btn-default"}  %> 
+                  <!-- remote: true  add this back in for ajax popup-->
+              </div>
+            </div> 
+          </div>
         </div>
       </div>
     </div>
-</div>
+  </div>
 </div>
 
 
