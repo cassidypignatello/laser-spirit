@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+# Active admin and dependencies
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
+gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'formtastic', github: 'justinfrench/formtastic'
 # Image handlers
 gem "fog"
 gem 'mini_magick'

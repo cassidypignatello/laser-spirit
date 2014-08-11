@@ -4627,7 +4627,7 @@ a.thumbnail.active {
   color: inherit;
 }
 .alert-success {
-  background-color: black;
+  background-color: #0f93df;
   border-color: black;
   color: #ffffff;
 }
