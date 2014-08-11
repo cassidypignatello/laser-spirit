@@ -27,6 +27,7 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    
     # Amount in cents
     # @order = Order.new
     @amount = 0
