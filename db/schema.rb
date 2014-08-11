@@ -105,7 +105,6 @@ ActiveRecord::Schema.define(version: 20140811011247) do
     t.integer  "seller_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_url"
     t.string   "image"
   end
 
