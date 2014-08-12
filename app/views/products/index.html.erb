@@ -6,7 +6,7 @@
         <div class="panel-heading">
           <h3><%= link_to "#{product.title} #{number_to_currency(product.price)}", product_path(product.id) %></h3>
         </div>
-        <img src="<%= product.image %>" class="img-responsive"/>
+        <img src="<%= product.image.square %>" class="img-responsive"/>
         <div class="panel-body">
           <%= "#{product.description.first(100)}..." %>
         </div>
