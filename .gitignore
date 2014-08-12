@@ -18,8 +18,7 @@
 # Ignore uploaded images
 /public/uploads/*
 
-# Ignore stripe test keys
-/config/initializers/stripe.rb
+
 # Ignore application configuration
 /config/application.yml
 
