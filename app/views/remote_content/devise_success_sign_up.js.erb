@@ -1,0 +1,10 @@
+$('.modal').modal('hide')
+
+if($('#flash').length > 0) {
+ $('#flash').remove();
+ $('body').prepend("<%= escape_javascript flash[:success]%>");
+}
+else {
+ $('.modal').modal('hide')
+ $('body').prepend("<%= escape_javascript flash[:success]%>");
+}
