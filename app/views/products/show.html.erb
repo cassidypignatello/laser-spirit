@@ -3,20 +3,6 @@
     <div class="col-lg-6">
       <p id="notice"><%= notice %></p>
 
-<<<<<<< HEAD
-  <div class="col-lg-8 col-md-6 col-sm-4">
-        <div class="panel panel-default bootcards-media">
-          <div class="panel-heading">
-            <h4><%= link_to "#{@product.title} #{number_to_currency(@product.price)}", product_path(@product.id) %></h4>
-          </div>
-          <img src="<%= @product.image %>" class="img-responsive"/>
-          <div class="panel-body">
-            <%= "#{@product.description.first(210)}..." %>
-          </div>
-          <div class="panel-footer">
-
-            <div class="btn-group btn-group-justified">
-=======
       <!-- Full product div -->
 <!--       <div class="row">
       <div class="col-lg-8 col-md-6 col-sm-4 offset-3">
@@ -25,7 +11,7 @@
           <!-- Image div, left side -->
           <div class="row">
           <div id="product-image" class="col-md-6">
-            <img src="<%= @product.image %>" width="100%" >
+            <img src="<%= @product.image.thumb %>" width="100%" >
           </div>
 
           <!-- Desc div, right side -->
@@ -33,18 +19,14 @@
             <h1><%= @product.title %></h1>
             <div id="product-pricing">                
               <h4 class="price"><%= number_to_currency(@product.price)  %></h4>      
->>>>>>> e79b9955ddffd86a08e36e90e838e483f7ea5f21
               <div class="btn-group">
                 <%= button_to "Add to Cart", add_to_cart_path(@product.id), 
                 {:class => "btn btn-default"}  %> 
               </div>
             </div>
-<<<<<<< HEAD
-=======
             <div id="product-description">
               <%= @product.description  %>
             </div>
->>>>>>> e79b9955ddffd86a08e36e90e838e483f7ea5f21
           </div>
         </div>
       </div>
