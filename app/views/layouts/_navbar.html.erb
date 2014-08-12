@@ -33,7 +33,7 @@
           </ul>
         </li>
       <% else %>
-         <li><%=  link_to "Sign up", remote_sign_up_path, :remote => true %></li>
+         <li><%=  link_to "Get Started", remote_sign_up_path, :remote => true, :class => 'active' %></li>
         <li><%= link_to "Sign In", user_session_path, :class => 'navbar-link'  %></li>
       <% end %>
     </ul>
