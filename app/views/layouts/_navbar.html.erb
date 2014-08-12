@@ -7,17 +7,18 @@
     </button>
     <%= link_to image_tag("down.png"), root_path, :class => 'navbar-brand' %>
   </div>
+
+
   <div class="navbar-collapse collapse navbar-inverse-collapse">
     <ul class="nav navbar-nav">
       <li><%= link_to 'Admin', new_admin_user_session_path %></li>
+      <li><a type="button" class="btn" href="#test_modal" data-toggle="modal" data-target="#myModal" >About</a></li>
     </ul>
-    
     <div class="navbar-form navbar-right">
     <%= form_tag products_path, :method => :get do %>
     <%= text_field_tag :search, params[:search], {:class => "form-control col-lg-8", :placeholder =>'Find stuff!'}  %>
     <% end %>
     </div>
-
     <ul class="nav navbar-nav navbar-right">
       <li><%= link_to 'Products', products_path %></li> 
       <% if user_signed_in? %>
@@ -37,5 +38,32 @@
         <li><%= link_to "Sign In", user_session_path, :class => 'navbar-link'  %></li>
       <% end %>
     </ul>
+  </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">What is Laser Spirit?</h4>
+      </div>
+      <div class="modal-body">
+
+         <h3>Laser Spirit is a digital E-commerce solution created with the developer in mind. It's built with Rails and uses an assortment of efficient gems for rapid prototyping:</h3>
+          <p> <a href="http://sunspot.github.io/">Solr</a> for high powered search and indexing.</p>
+          <p> <a href="https://github.com/carrierwaveuploader/carrierwave"> Carrierwave</a> and Amazon Web Services for easy image uploading.</p>
+          <p> <a href="https://github.com/activeadmin/active_admin"> Active Admin</a> for a sleek admin interface.</p>
+          <p> Built on top of <a href="http://getbootstrap.com/2.3.2/"> Bootstrap</a> for fast and seamless customizations.</p> 
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
