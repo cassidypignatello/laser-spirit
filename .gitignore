@@ -18,7 +18,11 @@
 # Ignore uploaded images
 /public/uploads/*
 
+<<<<<<< HEAD
+# Ignore stripe test keys
+=======
 
+>>>>>>> e79b9955ddffd86a08e36e90e838e483f7ea5f21
 # Ignore application configuration
 /config/application.yml
 

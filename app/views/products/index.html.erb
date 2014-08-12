@@ -1,24 +1,29 @@
 <div class="container">
   <div class="row">
    <% @products.each do |product| %>
-    <div class="col-lg-3 col-sm-6 col-md-4">
+    <div class="col-lg-4 col-sm-6 col-md-4">
       <div class="panel panel-default bootcards-media">
         <div class="panel-heading">
-          <h3><%= link_to "#{product.title} #{number_to_currency(product.price)}", product_path(product.id) %></h3>
+          <h4><%= link_to "#{product.title}", product_path(product.id) %></h4>
         </div>
         <img src="<%= product.image.product %>" class="img-responsive"/>
         <div class="panel-body">
-          <%= "#{product.description.first(100)}..." %>
+          <%= "#{product.description.first(210)}..." %>
         </div>
         <div class="panel-footer">
           <div class="btn-group btn-group-justified">
-            
+          
+            <div class="btn-group">
+              <%= button_to "#{number_to_currency(product.price)}", add_to_cart_path(product.id), 
+                {:class => "btn btn-custom"}  %>
+                <!-- remote: true add back in for ajax popup -->
+            </div>  
             <div class="btn-group">
               <% #binding.pry %>
               <%= button_to "Add to Cart", add_to_cart_path(product.id), 
                 {:class => "btn btn-default"}  %>
                 <!-- remote: true add back in for ajax popup -->
-            </div> 
+            </div>
           </div> 
         </div>
       </div>
