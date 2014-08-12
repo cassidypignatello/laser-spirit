@@ -5,7 +5,7 @@
 
 #   def create
 #     # Amount in cents
-#     @amount = 500
+#     @order_amount = 500
 
 #     customer = Stripe::Customer.create(
 #       :email => 'example@stripe.com',
@@ -14,7 +14,7 @@
 
 #     charge = Stripe::Charge.create(
 #       :customer    => customer.id,
-#       :amount      => @amount,
+#       :order_amount      => @order_amount,
 #       :description => 'Rails Stripe customer',
 #       :currency    => 'usd'
 #     )

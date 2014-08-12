@@ -30,16 +30,16 @@ class OrdersController < ApplicationController
     
     # Amount in cents
     # @order = Order.new
-    @amount = 0
+    @order_amount = 0
     current_user.shopping_cart.line_items.each do |line|
       #binding.pry
       #@order.name = current_user.name
       #@order.email = current_user.email
-      @amount += line.product.price * line.quantity
+      @order_amount += line.product.price * line.quantity
     end
     
 
-    @amount = @amount*100
+    @order_amount = @order_amount*100
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -48,7 +48,7 @@ class OrdersController < ApplicationController
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
-      :amount      => @amount,
+      :order_amount      => @order_amount,
       :description => 'Rails Stripe customer',
       :currency    => 'usd'
     )
@@ -56,11 +56,11 @@ class OrdersController < ApplicationController
 
     @order.save
     @order.id
-    @order.amount = 0
+    @order.order_amount = 0
     current_user.shopping_cart.line_items.each do |line|
       @order.name = current_user.name
       @order.email = current_user.email
-      @order.amount += line.product.price * line.quantity
+      @order.order_amount += line.product.price * line.quantity
       line.order_id = @order.id
       line.shopping_cart_id = nil
       line.save
