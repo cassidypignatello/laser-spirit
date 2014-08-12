@@ -27,6 +27,7 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    
     # Amount in cents
     # @order = Order.new
     @amount = 0
@@ -65,7 +66,8 @@ class OrdersController < ApplicationController
       line.save
     end
     @order.save
-    redirect_to root_path
+    redirect_to order_path(@order.id)
+   
     # At this point we need to make an Order.new We can get the info we need from current_user.
     # ex. 
       # current_user.shopping_cart.line_items.last.product.title => "Title"

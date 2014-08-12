@@ -1,6 +1,54 @@
 <div class="container">
-  <div class="row">
-  <%= render @shopping_cart %>
+  <h2>Your Cart</h2>
+  <div class="alert alert-dismissable alert-success">
+    <p id="notice"><%= notice %></p>
+  </div>
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @shopping_cart.line_items.each do |line| %>
+        <tr><%#= binding.pry %>
+          <td><%= line.product.title %></td>
+          <td><%= number_to_currency(line.product.price) %></td>
+          <td>
+            <%= form_for :line_item, :url => line_items_update_path(id: line.id) do |f| %>
+              <div class="field">
+                <%= f.number_field :quantity, :value => line.quantity, :html => { :style =>'width:10px;' } %>
+                  <%= submit_tag "Update" %>
+              </div>
+            <% end %>
+          </td>
+          <td><%= number_to_currency(line.quantity * line.product.price) %></td>
+          <td><%= button_to 'Delete Item', line_item_path(:item_id => line.id), method: :delete %></td>
+      <% end %>
+        </tr>
+        <tr>
+          <th>Subtotal</th>
+          <td></td>
+          <td></td>
+          <th><%= number_to_currency(@shopping_cart.cart_calculator) %></th>
+          <th><%# button_to "Checkout", new_order_path, method: :get %>
+            <%= form_tag orders_path, method: :post do %>
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-name="Flatiron General Store"
+                data-amount="<%= @shopping_cart.cart_calculator_cents %>"></script>
+            <% end %>
+          </th>
+        </tr>
+    </tbody>
+  </table> 
+    
+    
+
     <%= link_to 'Back', :back %>
   </div>
 </div>
