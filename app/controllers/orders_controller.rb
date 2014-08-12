@@ -48,7 +48,7 @@ class OrdersController < ApplicationController
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
-      :order_amount      => @order_amount,
+      :amount      => @order_amount.to_i,
       :description => 'Rails Stripe customer',
       :currency    => 'usd'
     )
@@ -112,6 +112,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :address, :email, :pay_type)
+      params.require(:order).permit(:name, :address, :email, :pay_type, :order_amount)
     end
 end

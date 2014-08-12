@@ -21,7 +21,7 @@
               <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                 data-name="Flatiron General Store"
-                data-amount="<%= shopping_cart.cart_calculator_cents %>"></script>
+                data-order_amount="<%= shopping_cart.cart_calculator_cents %>"></script>
             <% end %>
           </th>
         </tr>
