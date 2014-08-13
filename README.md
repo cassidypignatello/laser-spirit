@@ -22,7 +22,7 @@ We created Laser Spirit as a Rails engine to provide a simple way to sell digita
 
 ## Usage
 
-[Laser Spirit](https://laserspirit.ninja) is currently hosted as an example storefront that demonstrates the capabilities of Stripe Checkout.
+[Laser Spirit](http://laserspirit.ninja) is currently hosted as an example storefront that demonstrates the capabilities of Stripe Checkout.
 
 ## Development/Contribution
 
