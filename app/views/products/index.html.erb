@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
    <% @products.each do |product| %>
-    <div class="col-lg-4 col-sm-6 col-md-4" style="height: 700px;">
+    <div class="col-lg-4 col-sm-6 col-md-4" style="height: 800px;">
       <div class="panel panel-default bootcards-media">
         <div class="panel-heading">
           <h4><%= link_to "#{product.title}", product_path(product.id) %></h4>
