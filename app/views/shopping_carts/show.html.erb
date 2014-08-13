@@ -35,20 +35,18 @@
           <td></td>
           <td></td>
           <th><%= number_to_currency(@shopping_cart.cart_calculator) %></th>
-          <th><%# button_to "Checkout", new_order_path, method: :get %>
-            <%= form_tag orders_path, method: :post do %>
-              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                data-name="Flatiron General Store"
-                data-order_amount="<%= @shopping_cart.cart_calculator_cents %>"></script>
-            <% end %>
-          </th>
         </tr>
     </tbody>
   </table> 
-    
-    
-
-    <%= link_to 'Back', :back %>
+      <div class="col-md-4 col-md-offset-10">
+        <%= form_tag orders_path, method: :post do %>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-name="Flatiron General Store"
+              data-order_amount="<%= @shopping_cart.cart_calculator_cents %>"></script>
+          <% end %>
+      </div>
+      <%= link_to 'Back', :back %>
+      
   </div>
 </div>
