@@ -14,15 +14,15 @@ class ShoppingCartsController < ApplicationController
   def show
   end
 
-  # def add_to_cart
-  #   if !current_user
-  #     redirect_to new_user_session_path
-  #   else
-  #     current_user.shopping_cart.add_product(params[:product_id])
+  def add_to_cart
+    if !current_user
+      redirect_to new_user_session_path
+    else
+      current_user.shopping_cart.add_product(params[:product_id])
       
-  #     redirect_to shopping_cart_path(current_user.id)
-  #   end
-  # end
+      redirect_to shopping_cart_path(current_user.id)
+    end
+  end
 
   def checkout
     if current_user.shopping_cart.line_items.empty?
