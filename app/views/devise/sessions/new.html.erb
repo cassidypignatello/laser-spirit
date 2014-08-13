@@ -5,50 +5,45 @@
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-   <legend>Sign In</legend>
-   <div class="form-group">
-        <div><%=  f.label :email, :class => "col-lg-12 control-label" %><br />
-          <div class="col-lg-12">
-          <%= f.email_field :email, :class => "form-control" %>
+     <legend>Sign In</legend>
+     <div class="form-group">
+          <div><%=  f.label :email, :class => "col-lg-12 control-label" %><br />
+            <div class="col-lg-12">
+            <%= f.email_field :email, :class => "form-control" %>
+            </div>
           </div>
-        </div>
-    </div>
-    <div class="form-group">
+      </div>
+      <div class="form-group">
+          <div><%=  f.label :password, :class => "col-lg-12 control-label" %><br />
+            <div class="col-lg-12">
+            <%= f.password_field :password, :class => "form-control" %>
+            </div>
+          </div>
+      </div>
+
+      <div class="form-group">
         <div><%=  f.label :password, :class => "col-lg-12 control-label" %><br />
           <div class="col-lg-12">
-          <%= f.password_field :password, :class => "form-control" %>
+              <% if devise_mapping.rememberable? -%>
+              <div>
+              <%= f.check_box :remember_me %> 
+              <%= f.label :remember_me %>
+              </div>
+              <% end -%>
           </div>
         </div>
-    </div>
-
-    <div class="form-group">
-      <div><%=  f.label :password, :class => "col-lg-12 control-label" %><br />
-        <div class="col-lg-12">
-            <% if devise_mapping.rememberable? -%>
-            <div>
-            <%= f.check_box :remember_me %> 
-            <%= f.label :remember_me %>
-            </div>
-            <% end -%>
-        </div>
       </div>
-    </div>
 
-   <div class="col-lg-12">
-    <%= f.submit "Sign in", :class => "btn btn-primary" %>
-   </div>
+     <div class="col-lg-12">
+      <%= f.submit "Sign in", :class => "btn btn-primary" %>
+     </div>
 
-   <div class="col-lg-12 sub">
-    <%= link_to "Not a member?", registration_path(resource_name) %> | 
-    <%= link_to "Forgot your password?", new_password_path(resource_name) %>
-   </div>
+     <div class="col-lg-12 sub">
+      <%= link_to "Not a member?", registration_path(resource_name) %> | 
+      <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+     </div>
 
-
-   
-
-    
-
-    </div>
+     </div>
     <% end %>
    </div>
   </div>
