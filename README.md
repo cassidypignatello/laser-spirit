@@ -14,7 +14,7 @@ We created Laser Spirit as a Rails engine to provide a simple way to sell digita
 
 ## Features
 
-- Product image upload to Amazon s3
+- Product image upload to Amazon S3
 - Solr for high powered search and indexing
 - Easy checkout through Stripe
 - Customer Order view
@@ -22,7 +22,7 @@ We created Laser Spirit as a Rails engine to provide a simple way to sell digita
 
 ## Usage
 
-[Laser Spirit](laserspirit.ninja) is currently hosted as an example storefront that demonstrates the capabilities of Stripe Checkout.
+[Laser Spirit](https://laserspirit.ninja) is currently hosted as an example storefront that demonstrates the capabilities of Stripe Checkout.
 
 ## Development/Contribution
 
