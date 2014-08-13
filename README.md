@@ -6,7 +6,7 @@ A storefront platform for creating, purchasing and selling products.
 
 ## Screenshots
 
-![Screenshot](laser-spirit-hp-ss.png)
+![Screenshot](app/assets/images/laser-spirit-hp-ss.png)
 
 ## Background
 
