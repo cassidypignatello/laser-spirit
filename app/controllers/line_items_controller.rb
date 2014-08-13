@@ -12,14 +12,16 @@ class LineItemsController < ApplicationController
     redirect_to new_user_session_path
   end
 
+
   def create
     product = Product.find(params[:product_id])
     @line_item = current_user.shopping_cart.add_product(product.id)
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.shopping_cart,
+        format.html { redirect_to products_path,
           notice: 'Line item was successfully created.' }
+        format.js
         format.json { render action: 'show',
           status: :created, location: @line_item }
       else
