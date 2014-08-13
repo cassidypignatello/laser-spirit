@@ -4,10 +4,14 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @search = Product.solr_search do
-    fulltext params[:search]
+    if params[:search]
+      @search = Product.solr_search do
+      fulltext params[:search]
+      end
+      @products = @search.results
+    else
+      @products = Product.all
     end
-    @products = @search.results
   end
 
   # GET /products/1
