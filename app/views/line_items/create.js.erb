@@ -1,1 +1,1 @@
-$('#item_count').html('<a href="/shopping_carts/<%= current_user.id %>"><%= current_user.shopping_cart.cart_count %></a>');
+$('#item_count').html('<a href="/shopping_carts/<%= current_user.id %>"><%= image_tag ("cart2.png") %> <%= current_user.shopping_cart.cart_count %></a>');
