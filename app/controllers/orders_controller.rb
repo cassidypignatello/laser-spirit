@@ -11,8 +11,6 @@ class OrdersController < ApplicationController
     end
   end
 
-
-
   # GET /orders/1
   # GET /orders/1.json
   def show
@@ -26,7 +24,6 @@ class OrdersController < ApplicationController
       redirect_to root_path, notice: "Your cart is empty"
       return
     end
-
     @order = Order.new
   end
 
