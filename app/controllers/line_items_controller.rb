@@ -1,6 +1,16 @@
 class LineItemsController < ApplicationController
 
+  def index
+    redirect_to new_user_session_path
+  end
 
+  def new
+    redirect_to new_user_session_path
+  end
+
+  def show
+    redirect_to new_user_session_path
+  end
 
   def create
     product = Product.find(params[:product_id])

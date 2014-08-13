@@ -6,12 +6,15 @@ class ShoppingCartsController < ApplicationController
   # GET /shopping_carts
   # GET /shopping_carts.json
   def index
-    @shopping_carts = ShoppingCart.all
+    redirect_to root_path 
   end
 
   # GET /shopping_carts/1
   # GET /shopping_carts/1.json
   def show
+    if @shopping_cart.id != current_user.id
+      redirect_to root_path
+    end
   end
 
   def add_to_cart
