@@ -29,7 +29,14 @@ class ShoppingCart < ActiveRecord::Base
     self.cart_calculator * 100.to_i
   end
 
-
+  def cart_count
+    @line_item_total = 0 
+    self.line_items.each do |line|
+      line.quantity
+      @line_item_total += line.quantity
+    end
+    @line_item_total
+  end
 
 
 end
