@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-# Attempting pagination
-
-
 # Active admin and dependencies
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
