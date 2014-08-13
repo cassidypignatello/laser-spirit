@@ -12,7 +12,6 @@ class LineItemsController < ApplicationController
     redirect_to new_user_session_path
   end
 
-
   def create
     product = Product.find(params[:product_id])
     @line_item = current_user.shopping_cart.add_product(product.id)
