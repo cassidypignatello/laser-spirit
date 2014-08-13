@@ -3,10 +3,10 @@
     <div class="col-lg-6">
       <p id="notice"><%= notice %></p>
           <div class="row">
-          <div id="product-image" class="col-md-6">
+          <div id="product-image" class="col-lg-6">
             <img src="<%= @product.image.thumb %>" width="100%" >
           </div>
-          <div id="product-information" class="col-md-6">
+          <div id="product-information" class="col-lg-6">
             <h1><%= @product.title %></h1>
             <div id="product-pricing">                
               <h4 class="price"><%= number_to_currency(@product.price)  %></h4>      
