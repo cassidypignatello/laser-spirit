@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
    <% @products.each do |product| %>
-    <div class="col-lg-4 col-sm-6 col-md-4">
+    <div class="col-lg-4 col-sm-6 col-md-4" style="height: 900px;">
       <div class="panel panel-default bootcards-media">
         <div class="panel-heading">
           <h4><%= link_to "#{product.title}", product_path(product.id) %></h4>
         </div>
-        <img src="<%= product.image.resized %>" class="img-responsive"/>
+        <img src="http://www.informit.com/ShowCover.aspx?isbn=0321832051" class="img-responsive"/>
         <div class="panel-body">
           <%= "#{product.description.first(210)}..." %>
         </div>
