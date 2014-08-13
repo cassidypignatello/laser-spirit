@@ -2,7 +2,7 @@
 
 ## Description
 
-A storefront platform for creating, purchasing and selling products.
+Laser Spirit is a digital goods store that lets you create and display products, collect orders and checkout through the shopping cart, and manage the orders through the administrative back end.
 
 ## Screenshots
 
@@ -10,31 +10,28 @@ A storefront platform for creating, purchasing and selling products.
 
 ## Background
 
-Why did you want to make this app? What was your development process
-like?
+We created Laser Spirit as a Rails engine to provide a simple way to sell digital goods in your host application.
 
 ## Features
 
-Bullet point some of the key features of your app here.
+- Product image upload to Amazon S3
+- Solr for high powered search and indexing
+- Easy checkout through Stripe
+- Customer Order view
+- Full admin backend where you can view and manage orders and edit products
 
 ## Usage
 
-How do users use your app?
+[Laser Spirit](http://laserspirit.ninja) is currently hosted as an example storefront that demonstrates the capabilities of Stripe Checkout.
 
 ## Development/Contribution
 
-Explain how people can contribute to your app. How should they write tests?
-Any things in particular you'd like to see in pull requests?
-
-## Future
-
-What features are you currently working on? Only mention things that you
-actually are implementing. No pie-in-the-sky-never-gonna-happen stuff.
+Feel free to fork our repo and customize it to your needs, or send over a pull request with anything you'd like to contribute!
 
 ## Author
 
-Link to your blog, twitter, etc!
+Built by [Zack Sheppard](https://twitter.com/zackshp), [Dan Sullivan](https://twitter.com/dsully360), [Cassidy Pignatello](https://twitter.com/itscassidy) and [Bianca Tompkins](https://twitter.com/bitompkins) at The Flatiron School.
 
 ## License
 
-Flatiron General Store is MIT Licensed. See LICENSE for details.
+Laser Spirit is MIT Licensed. See LICENSE for details.
