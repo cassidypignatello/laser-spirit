@@ -1,47 +1,48 @@
-<div class="navbar navbar-inverse">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <%= link_to image_tag("down.png"), root_path, :class => 'navbar-brand' %>
-  </div>
-
-  <div class="navbar-collapse collapse navbar-inverse-collapse">
-    <ul class="nav navbar-nav">
-      <li><%= link_to 'Admin', new_admin_user_session_path %></li>
-      <li><a type="button"  href="#test_modal" data-toggle="modal" data-target="#myModal">About</a></li>
-    </ul>
-    <div class="navbar-form navbar-right">
-    <%= form_tag products_path, :method => :get do %>
-    <%= text_field_tag :search, params[:search], {:class => "form-control col-lg-8", :placeholder =>'Find stuff!'}  %>
-    <% end %>
+<div data-spy="affix" data-offset-top="100">  
+  <div class="navbar navbar-inverse">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to image_tag("down.png"), root_path, :class => 'navbar-brand' %>
     </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to 'Products', products_path %></li> 
-      <% if user_signed_in? %>
-        <li id='item_count' class='navbar-link'> 
-          
-         <a href="/shopping_carts/<%= current_user.id %>"><%= image_tag ("cart2.png") %> <%= current_user.shopping_cart.cart_count %></a></li>   
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=  " Hello, #{current_user.name} " %> <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to 'My Orders', orders_path %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-          </ul>
-        </li>
-      <% else %>
-        <li><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %></li>
-        <li><%= link_to "Sign In", user_session_path, :class => 'navbar-link'  %></li>
+
+    <div class="navbar-collapse collapse navbar-inverse-collapse">
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'Admin', new_admin_user_session_path %></li>
+        <li><a type="button"  href="#test_modal" data-toggle="modal" data-target="#myModal">About</a></li>
+      </ul>
+      <div class="navbar-form navbar-right">
+      <%= form_tag products_path, :method => :get do %>
+      <%= text_field_tag :search, params[:search], {:class => "form-control col-lg-8", :placeholder =>'Find stuff!'}  %>
       <% end %>
-    </ul>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Products', products_path %></li> 
+        <% if user_signed_in? %>
+          <li id='item_count' class='navbar-link'> 
+            
+           <a href="/shopping_carts/<%= current_user.id %>"><%= image_tag ("cart2.png") %> <%= current_user.shopping_cart.cart_count %></a></li>   
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=  " Hello, #{current_user.name} " %> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'My Orders', orders_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %></li>
+          <li><%= link_to "Sign In", user_session_path, :class => 'navbar-link'  %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
-
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
